@@ -24,14 +24,34 @@ const Detail = () => {
   if (!dentist) return <p className="text-center">Loading...</p>;
 
   return (
-    <div className={`detail ${state.theme === 'dark' ? 'bg-dark text-white' : 'bg-lightGray text-black'} p-4`}>
-      <h1 className="text-2xl font-bold">HOME</h1>
-      <p><strong>Name:</strong> {dentist.name}</p>
-      <p><strong>Email:</strong> {dentist.email}</p>
-      <p><strong>Phone:</strong> {dentist.phone}</p>
-      <p><strong>Website:</strong> <a href={`http://${dentist.website}`} className="text-blue-500">{dentist.website}</a></p>
+    <div className={`detail border border-gray-400 rounded-md overflow-hidden shadow-md mb-4 w-full mt-15 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} p-4`}>
+      <h1 className="text-2xl font-bold mb-8">Detalles del Dentista</h1>
+      {/* Estructura de tabla con bordes */}
+      <div className="table w-full border-collapse border border-gray-400">
+        {/* Fila de títulos */}
+        <div className="table-row bg-stone-500  text-xl ">
+          <div className="table-cell border border-gray-400 p-2 font-semibold">Name</div>
+          <div className="table-cell border border-gray-400 p-2 font-semibold">Email</div>
+          <div className="table-cell border border-gray-400 p-2 font-semibold">Phone</div>
+          <div className="table-cell border border-gray-400 p-2 font-semibold">Website</div>
+        </div>
+        
+        {/* Fila con los datos del dentista */}
+        <div className="table-row text-xl ">
+          <div className="table-cell border border-gray-400 p-2">{dentist.name}</div>
+          <div className="table-cell border border-gray-400 p-2">{dentist.email}</div>
+          <div className="table-cell border border-gray-400 p-2">{dentist.phone}</div>
+          <div className="table-cell border border-gray-400 p-2">
+            <a href={`http://${dentist.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              {dentist.website}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
+  
+  
 };
 
 export default Detail;
