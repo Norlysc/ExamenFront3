@@ -21,10 +21,10 @@ const Detail = () => {
     fetchDentist();
   }, [id]);
 
-  if (!dentist) return <p className="text-center">Loading...</p>;
+  if (!dentist) return <p className="text-center ">Loading...</p>;
 
   return (
-    <div className={`detail border border-gray-400 rounded-md overflow-hidden shadow-md mb-9  w-full mt-48 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} p-4`}>
+    <div className={`detail border border-gray-400 rounded-md overflow-hidden shadow-md mb-9  w-full mt-40 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} p-10`}>
       <h1 className="text-2xl font-bold mb-8 mt-5">Detalles del Dentista</h1>
       {/* Estructura de tabla con bordes */}
       <div className="table w-full border-collapse border border-gray-400 ">
