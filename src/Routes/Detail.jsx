@@ -24,12 +24,12 @@ const Detail = () => {
   if (!dentist) return <p className="text-center">Loading...</p>;
 
   return (
-    <div className={`detail border border-gray-400 rounded-md overflow-hidden shadow-md mb-4 w-full mt-15 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} p-4`}>
-      <h1 className="text-2xl font-bold mb-8">Detalles del Dentista</h1>
+    <div className={`detail border border-gray-400 rounded-md overflow-hidden shadow-md mb-9  w-full mt-48 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} p-4`}>
+      <h1 className="text-2xl font-bold mb-8 mt-5">Detalles del Dentista</h1>
       {/* Estructura de tabla con bordes */}
-      <div className="table w-full border-collapse border border-gray-400">
+      <div className="table w-full border-collapse border border-gray-400 ">
         {/* Fila de títulos */}
-        <div className="table-row bg-stone-500  text-xl ">
+        <div className="table-row bg-stone-500  text-xl  ">
           <div className="table-cell border border-gray-400 p-2 font-semibold">Name</div>
           <div className="table-cell border border-gray-400 p-2 font-semibold">Email</div>
           <div className="table-cell border border-gray-400 p-2 font-semibold">Phone</div>

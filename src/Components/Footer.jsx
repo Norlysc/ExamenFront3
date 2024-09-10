@@ -1,13 +1,57 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useAppContext } from '../Components/utils/global.context'; // Asegúrate de importar correctamente el contexto
+
+
+
 const Footer = () => {
+  const { state } = useAppContext(); // Accede al estado global
+
   return (
-    <footer className="bg-red-500 text-white py-4 flex justify-center items-center w-full">
-      <p className="mr-2">Powered by</p>
-      <img 
-        src="/ctd-esp-fe3-final/public/DH.ico" 
-        alt="DH-logo" 
-        className="w-6 h-6"
-      />
-    </footer>
+    <>
+      {/* Sección superior del footer */}
+     
+
+<footer className={`w-full ${state.theme === 'dark' ? 'bg-gray-800 text-white pt-px' : 'bg-gray-100 text-black'}`}>
+        <div className="bg-red-700 text-white py-4 px-4 flex justify-center items-center w-lvw h-max m-0">
+          <p className="mr-2">VOTA</p>
+          <img 
+            src="/images/DH.ico"
+            alt="DH-logo" 
+            className="w-6 h-6"
+          />
+        </div>
+      </footer>
+
+      {/* Contenedor para DIGITALHOUSE y redes sociales */}
+      <div className={`flex flex-col items-center py-8 px-4 ${state.theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'}`}>
+       
+
+        {/* Íconos de redes sociales */}
+        <div className="flex space-x-4 mt-5 ">
+           {/* Texto "DIGITALHOUSE" con degradado */}
+           
+              <img 
+               src="/images/DH.png" 
+               alt="DH-logo" 
+               className="w-19 h-16 ml-1.5 " // Puedes ajustar el tamaño según sea necesario
+               />
+          
+        
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-facebook text-black text-2xl hover:text-gray-600"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-instagram text-black text-2xl hover:text-gray-600"></i>
+          </a>
+          <a href="https://wa.me" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-whatsapp text-black text-2xl hover:text-gray-600"></i>
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-tiktok text-black text-2xl hover:text-gray-600"></i>
+          </a>
+        </div>
+      </div>
+    </>
   );
 };
 

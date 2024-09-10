@@ -4,7 +4,11 @@
 
 
 body {
-  @apply m-0 font-sans antialiased;
+  @apply m-0 font-sans antialiased ;
+}
+
+.dark body {
+  @apply bg-gray-900 text-white;
 }
 
 code {
@@ -48,7 +52,10 @@ form {
 }
 
 .card {
-  @apply flex flex-col items-center w-48 p-2 border border-gray-400;
+  @apply flex flex-col items-center p-4 border border-gray-300 bg-white;
+  /* Puedes ajustar el ancho y alto según necesites */
+  width: 200px;
+  height: 300px;
 }
 
 .card:hover {
@@ -56,7 +63,7 @@ form {
 }
 
 .card-grid {
-  @apply flex justify-evenly gap-4 w-11/12 flex-wrap mx-auto;
+  @apply flex flex-wrap justify-center gap-4;
 }
 
 table {

@@ -30,17 +30,19 @@ const Card = ({ name, username, id, image }) => {
   };
 
   return (
-    <div className="card bg-white p-4 shadow-lg rounded-lg">
-      {image && (
-        <img src={image} alt={name} className="w-full h-32 object-cover rounded-t-lg mb-4" />
-      )}
-      <h2 className="text-xl font-bold">{name}</h2>
+    <div className="card bg-#f0eaea p-4 shadow-lg rounded-lg">
+      <img 
+        src="/images/doctor.jpg" 
+        alt="Doctor" 
+        className="w-full h-32 object-cover mb-4" 
+      />
+      <h2 className="text-xl font-bold mt-3">{name}</h2>
       <p className="text-gray-600">{username}</p>
-      <Link to={`/dentist/${id}`} className="text-blue-500 hover:underline">Ver detalles</Link>
+      <Link to={`/dentist/${id}`} className="text-blue-500 hover:underline mt-5">Ver detalles</Link>
       
       {/* Estrella de favoritos */}
       <div 
-        className={`flex items-center mt-2 cursor-pointer ${isFav ? 'text-yellow-500' : 'text-gray-400'}`} 
+        className={`flex items-center mt-5 cursor-pointer  ${isFav ? 'text-yellow-500' : 'text-gray-400'}`} 
         onClick={toggleFav}
         aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
       >

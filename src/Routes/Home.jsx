@@ -1,3 +1,5 @@
+// src/Routes/Home.jsx
+
 import { useEffect } from 'react';
 import axios from 'axios';
 import Card from '../Components/Card';
@@ -27,16 +29,18 @@ const Home = () => {
   };
 
   return (
-    <main className={`home ${state.theme} py-8`}>
+    <main className={`home mt-10 mx-11 ${state.theme === 'dark' ? 'bg-dark text-white' : 'bg-lightGray text-black'} py-8`}>
       <h1 className="text-3xl font-bold text-center mb-8">HOME</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4 md:px-10 ml-20 p-10 ">
         {state.dentists.map(dentist => (
-          <Card key={dentist.id}
+          <Card
+            key={dentist.id}
             dentist={dentist}
             username={dentist.username}
             id={dentist.id}
             image={`/images/Doc.jpeg`}
-            onAddFav={handleAddFav} />
+            onAddFav={handleAddFav}
+          />
         ))}
       </div>
     </main>

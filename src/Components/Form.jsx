@@ -68,7 +68,7 @@ const Form = () => {
 
   return (
     <div className={`p-6 max-w-lg mx-auto rounded-lg h-80 shadow-lg ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-5">
         <div className="flex flex-col">
           <label htmlFor="name" className="text-lg font-semibold mb-2">Nombre completo:</label>
           <input
