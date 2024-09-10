@@ -9,33 +9,23 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`flex justify-between p-4 w-full shadow-lg ${state.theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
-      <div className="flex space-x-4">
-        <Link
-          to="/"
-          className={`text-lg ${state.theme === 'dark' ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'}`}
-        >
-          Home
-        </Link>
-        <Link
-          to="/contact"
-          className={`text-lg ${state.theme === 'dark' ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'}`}
-        >
-          Contact
-        </Link>
-        <Link
-          to="/favs"
-          className={`text-lg ${state.theme === 'dark' ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'}`}
-        >
-          Favs
-        </Link>
+    <nav className={`flex justify-between items-center p-4 w-full shadow-lg ${state.theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+      {/* Logo a la izquierda */}
+      <div className="flex items-center space-x-2">
+        <span className={`text-2xl ml-10 ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          <span className={`text-red-600`}>D</span>H Odonto
+        </span>
       </div>
-      <button
-        onClick={toggleTheme}
-        className={`text-xl ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}
-      >
-        {state.theme === 'dark' ? '🌙' : '☀️'} {/* Ajusta el icono según el tema */}
-      </button>
+
+      {/* Enlaces y botón para alternar el tema a la derecha */}
+      <div className="flex items-center space-x-4 mr-10">
+        <Link to="/" className={`hover:text-gray-600 ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}>Home</Link>
+        <Link to="/contact" className={`hover:text-gray-600 ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}>Contact</Link>
+        <Link to="/favs" className={`hover:text-gray-600 ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}>Favs</Link>
+        <button onClick={toggleTheme} className={`text-xl ${state.theme === 'dark' ? 'text-white' : 'text-black'}`}>
+          {state.theme === 'dark' ? '🌙' : '☀️'}
+        </button>
+      </div>
     </nav>
   );
 };
