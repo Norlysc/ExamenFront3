@@ -9,23 +9,25 @@ import { ContextProvider, useAppContext } from './Components/utils/global.contex
 
 function App() {
   const { state } = useAppContext(); // Obtener el estado del contexto global
-
-  return (
+  
+return (
+  <ContextProvider> {/* Mueve el ContextProvider aquí para envolver toda la aplicación */}
     <Router>
-      <ContextProvider>
-        <div className={`${state.theme === 'dark' ? 'bg-dark text-white' : 'bg-lightGray text-black'}`}>
-          <Navbar />
+      <div className={`flex flex-col min-h-screen ${state.theme === 'dark' ? 'bg-dark text-white' : 'bg-lightGray text-black'}`}>
+        <Navbar />
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dentist/:id" element={<Detail />} />
             <Route path="/favs" element={<Favs />} />
           </Routes>
-          <Footer />
-        </div>
-      </ContextProvider>
+        </main>
+        <Footer />
+      </div>
     </Router>
-  );
+  </ContextProvider>
+);
 }
 
 export default App;
