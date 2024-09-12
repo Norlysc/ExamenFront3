@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Routes/Home';
 import Contact from './Routes/Contact';
@@ -8,8 +7,10 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { ContextProvider, useAppContext } from './Components/utils/global.context';
 import './index.css'; // Importa tu archivo CSS aquí
+import { useEffect } from 'react';
 
-function App() {
+// Componente principal de la aplicación
+function AppContent() {
   const { state } = useAppContext(); // Obtener el estado del contexto global
 
   useEffect(() => {
@@ -18,20 +19,27 @@ function App() {
   }, [state.theme]);
 
   return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/dentist/:id" element={<Detail />} />
+          <Route path="/favs" element={<Favs />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+// Componente raíz envuelto en el ContextProvider
+function App() {
+  return (
     <ContextProvider>
       <Router>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/dentist/:id" element={<Detail />} />
-              <Route path="/favs" element={<Favs />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
+        <AppContent />
       </Router>
     </ContextProvider>
   );

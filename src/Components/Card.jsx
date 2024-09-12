@@ -2,9 +2,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { useAppContext } from '../Components/utils/global.context'; // Importa el contexto
 
 const Card = ({ name, username, id, image }) => {
   const [isFav, setIsFav] = useState(false);
+  const { state } = useAppContext(); // Accede al estado global
+  const { theme } = state; // Obtén el tema actual
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favs")) || [];
@@ -30,7 +33,7 @@ const Card = ({ name, username, id, image }) => {
   };
 
   return (
-    <div className="card bg-#f0eaea p-4 shadow-lg rounded-lg">
+    <div className={`card bg-#c6b3b3 p-4 shadow-lg rounded-s-lg ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-#969090 text-black'}`}>
       <img 
         src="/images/doctor.jpg" 
         alt="Doctor" 
@@ -38,11 +41,17 @@ const Card = ({ name, username, id, image }) => {
       />
       <h2 className="text-xl font-bold mt-3">{name}</h2>
       <p className="text-gray-600">{username}</p>
-      <Link to={`/dentist/${id}`} className="text-blue-500 hover:underline mt-5">Ver detalles</Link>
+      <Link 
+        to={`/dentist/${id}`} 
+        className={`mt-5 ${theme === 'dark' ? 'text-blue-400' : 'text-blue-500'} hover:underline`}
+        style={{ color: theme === 'dark' ? '#1E40AF' : '#3B82F6' }} // Asegura el color del enlace
+      >
+        Ver detalles
+      </Link>
       
       {/* Estrella de favoritos */}
       <div 
-        className={`flex items-center mt-5 cursor-pointer  ${isFav ? 'text-yellow-500' : 'text-gray-400'}`} 
+        className={`flex items-center mt-5 cursor-pointer ${isFav ? 'text-yellow-500' : 'text-gray-400'}`} 
         onClick={toggleFav}
         aria-label={isFav ? "Remove from favorites" : "Add to favorites"}
       >

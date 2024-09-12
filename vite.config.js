@@ -9,8 +9,8 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        tailwindcss(),
-        autoprefixer(),
+        tailwindcss(), // Usa el plugin directamente con paréntesis
+        autoprefixer(), // Usa el plugin directamente con paréntesis
       ],
     },
   },

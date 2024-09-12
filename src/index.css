@@ -1,14 +1,11 @@
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  @apply m-0 font-sans antialiased ;
-}
-
-.dark body {
-  @apply bg-gray-900 text-white;
+/* Configuración por defecto */
+html, body {
+  @apply bg-white text-black;
 }
 
 code {
@@ -56,6 +53,8 @@ form {
   /* Puedes ajustar el ancho y alto según necesites */
   width: 200px;
   height: 300px;
+  background-color: #f0f0f0; /* Color gris claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .card:hover {
@@ -78,10 +77,17 @@ tr:nth-child(even) {
   @apply bg-gray-200;
 }
 
+/* Configuración del modo oscuro */
 .dark {
   @apply bg-dark text-white;
 }
 
-.dark > a {
+.dark a {
   @apply text-white;
+}
+
+@media (max-width: 768px) {
+  .custom-class {
+    /* Estilos específicos para pantallas pequeñas */
+  }
 }
