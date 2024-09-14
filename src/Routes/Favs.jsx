@@ -4,16 +4,16 @@ import { useEffect, useState } from "react";
 
 const Favs = () => {
   const { state } = useAppContext(); // Obtener el estado del contexto global
-  const { theme } = state; // Obtener el tema actual desde el contexto
+  const { theme } = state; // tema actual desde el contexto
 
-  // Estado para almacenar los dentistas favoritos
+
   const [favs, setFavs] = useState([]);
 
   useEffect(() => {
-    // Obtener los dentistas destacados del localStorage
+   
     const savedFavs = JSON.parse(localStorage.getItem('favs')) || [];
     setFavs(savedFavs);
-  }, []); // Solo se ejecuta una vez cuando el componente se monta
+  }, []); 
 
   return (
     <main className={`p-6 max-w-screen-lg mx-auto rounded-lg mt-8 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
@@ -27,7 +27,7 @@ const Favs = () => {
               id={dentist.id}
               name={dentist.name}
               username={dentist.username}
-              imageUrl={dentist.imageUrl} // Asegúrate de que la URL de la imagen esté disponible
+              imageUrl={dentist.imageUrl} 
             />
           ))
         ) : (

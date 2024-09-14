@@ -1,4 +1,4 @@
-// src/Components/ThemeSwitcher.jsx
+
 
 import { useAppContext } from './utils/global.context';
 

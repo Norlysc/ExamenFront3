@@ -1,5 +1,5 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { useAppContext } from '../Components/utils/global.context'; // Asegúrate de importar correctamente el contexto
+import { useAppContext } from '../Components/utils/global.context'; 
 
 const Footer = () => {
   const { state } = useAppContext(); // Accede al estado global
@@ -19,13 +19,12 @@ const Footer = () => {
         </div>
       </footer>
 
-      {/* Contenedor para DIGITALHOUSE y redes sociales */}
       <div className={`flex flex-col items-center py-7 mb-3 ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'}`}>
        
         <img 
           src="/images/DH.png" 
           alt="DH-logo" 
-          className="w-25 h-14" // Puedes ajustar el tamaño según sea necesario
+          className="w-25 h-14" 
         />
 
         {/* Íconos de redes sociales */}

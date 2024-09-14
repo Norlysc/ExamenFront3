@@ -7,7 +7,7 @@ import { useAppContext } from '../Components/utils/global.context'; // Importa e
 const Card = ({ name, username, id, image }) => {
   const [isFav, setIsFav] = useState(false);
   const { state } = useAppContext(); // Accede al estado global
-  const { theme } = state; // Obtén el tema actual
+  const { theme } = state; //  tema actual
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favs")) || [];
@@ -49,7 +49,7 @@ const Card = ({ name, username, id, image }) => {
         Ver detalles
       </Link>
       
-      {/* Estrella de favoritos */}
+      
       <div 
         className={`flex items-center mt-5 cursor-pointer ${isFav ? 'text-yellow-500' : 'text-gray-400'}`} 
         onClick={toggleFav}

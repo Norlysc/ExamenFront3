@@ -5,18 +5,12 @@ import Detail from './Routes/Detail';
 import Favs from './Routes/Favs';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import { ContextProvider, useAppContext } from './Components/utils/global.context';
-import './index.css'; // Importa tu archivo CSS aquí
-import { useEffect } from 'react';
+import { ContextProvider} from './Components/utils/global.context';
+import './index.css'; 
+
 
 // Componente principal de la aplicación
 function AppContent() {
-  const { state } = useAppContext(); // Obtener el estado del contexto global
-
-  useEffect(() => {
-    // Aplica o quita la clase 'dark' del body según el estado del tema
-    document.body.classList.toggle('dark', state.theme === 'dark');
-  }, [state.theme]);
 
   return (
     <div className="flex flex-col min-h-screen">

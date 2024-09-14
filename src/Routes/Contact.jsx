@@ -1,10 +1,10 @@
-// src/Routes/Contact.jsx
+
 import Form from '../Components/Form';
 import { useAppContext } from '../Components/utils/global.context';
 
 const Contact = () => {
   const { state } = useAppContext(); // Obtener el contexto global
-  const { theme } = state; // Obtener el tema actual desde el contexto
+  const { theme } = state; //  tema actual desde el contexto
 
   return (
     <main className={theme === 'dark' ? 'bg-dark text-white py-20' : 'bg-light text-black'}>

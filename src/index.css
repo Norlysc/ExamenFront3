@@ -1,9 +1,9 @@
-/* index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Configuración por defecto */
+
 html, body {
   @apply bg-white text-black;
 }
@@ -49,16 +49,18 @@ form {
 }
 
 .card {
-  @apply flex flex-col items-center p-4 border border-gray-300 bg-white;
-  /* Puedes ajustar el ancho y alto según necesites */
+  @apply flex flex-col items-center p-4 border border-gray-300 bg-white transition-transform duration-300 ease-in-out; 
+  
   width: 200px;
   height: 300px;
-  background-color: #f0f0f0; /* Color gris claro */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  background-color: #f0f0f0; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .card:hover {
-  @apply border-yellow-400;
+  @apply border-red-400 transform scale-105 shadow-lg; 
+  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .card-grid {

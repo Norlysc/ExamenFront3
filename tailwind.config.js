@@ -8,10 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: '#121212',      // Color oscuro para el fondo
-        darkGray: '#0f0e0e',  // Gris oscuro para elementos secundarios
-        lightGray: '#F1F1F1', // Gris claro para el fondo
-        hover: '#8C1D2E',     // Color para hover
+        dark: '#121212',      
+        darkGray: '#0f0e0e',  
+        lightGray: '#F1F1F1', 
+        hover: '#8C1D2E',     
       },
     },
   },

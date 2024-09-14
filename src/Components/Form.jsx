@@ -3,7 +3,7 @@ import { useAppContext } from './utils/global.context';
 
 const Form = () => {
   const { state } = useAppContext(); // Obtener el contexto global
-  const { theme } = state; // Obtener el tema actual desde el contexto
+  const { theme } = state; // tema actual desde el contexto
 
   // Estado para almacenar los datos del formulario
   const [formData, setFormData] = useState({ name: '', email: '' });
